@@ -48,8 +48,10 @@ jobs:
                         node-version: 22
                         cache: 'yarn'
                         cache-dependency-path: ./web/yarn.lock
-                  - run: yarn install && yarn run build
-                         sudo rm -rf /home/runner/.cache/yarn
+                  - run: |
+                  sudo rm -rf /home/runner/.cache/yarn
+                  yarn install && yarn run build
+                  sudo rm -rf /home/runner/.cache/yarn
                     working-directory: ./web
 
                   - uses: actions/upload-artifact@v4
