@@ -49,9 +49,9 @@ jobs:
                         cache: 'yarn'
                         cache-dependency-path: ./web/yarn.lock
                   - run: |
-                  sudo rm -rf /home/runner/.cache/yarn
-                  yarn install && yarn run build
-                  sudo rm -rf /home/runner/.cache/yarn
+                        sudo rm -rf /home/runner/.cache/yarn
+                        yarn install && yarn run build
+                        sudo rm -rf /home/runner/.cache/yarn
                     working-directory: ./web
 
                   - uses: actions/upload-artifact@v4
